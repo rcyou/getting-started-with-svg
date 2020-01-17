@@ -285,7 +285,6 @@ div.munster_svg {
 figure.skill_module {
   display: inline-block;
   vertical-align: middle;
-  width: 15rem;
 }
 
 .skill_module { text-align: center; }
@@ -335,6 +334,75 @@ figure.skill_module {
 .skill_module:hover #talk_icon #speech-dots path:nth-child(4) {
   -webkit-animation-delay: 350ms;
           animation-delay: 350ms;
+}
+
+#talk_icon {
+  max-width: 15rem;
+  margin: auto;
+  display: block;
+  overflow: visible;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#front-bubble #white_part {
+  stroke-width: ;
+  stroke: white;
+}
+
+svg, path, g { transition: all 300ms ease-in-out; }
+
+#talk_icon:hover #back-bubble {
+  transform: translate(-1px, -4px) scale(0.9);
+}
+#talk_icon:hover #front-bubble {
+  transform: scale(1.125);
+}
+#talk_icon:hover #speech-dots path {
+  animation: twinkle 2000ms ease-in-out alternate infinite;
+  transform-origin: center;
+}
+
+//same animation is used but just put a delay on it
+#talk_icon:hover #speech-dots
+path:nth-child(1) {
+  animation-delay: 50ms;
+}
+path:nth-child(2) {
+  animation-delay: 150ms;
+}
+#talk_icon:hover #speech-dots path:nth-child(3) {
+  animation-delay: 250ms;
+}
+#talk_icon:hover #speech-dots path:nth-child(4) {
+  animation-delay: 350ms;
+}
+
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /** DESIGN ICON **/
